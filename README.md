@@ -2,8 +2,10 @@
 
 [![Build Status](https://travis-ci.org/tp/set-in-ts.svg?branch=master)](https://travis-ci.org/tp/set-in-ts)
 
-```ts
-var {set1, set2, set3} = require("set-in-ts")
+Type-safe `setIn` implementation to write nested fields. Returns `undefined` if `undefined` or `null` is encountered when traversing path.
 
-set3({x: { y: { z: 'a' } } }, ['x', 'y', 'z'], 'b') // === {x: { y: { z: 'b' } } }
+```ts
+import { setIn } from 'set-in-ts';
+
+setIn({ x: { y: { z: 1 } } }, ['x', 'y', 'z'], 2); // === {x: { y: { z: 2 } } }
 ```
